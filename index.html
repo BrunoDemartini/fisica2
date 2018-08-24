@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>fisica</title>
+	<meta charset="utf-8">
+</head>
+<body>
+	<style>
+		body{
+			background-color: #393939;
+			color: white;
+		}
+
+		h1{
+			font-size: 100px;
+		}
+
+		h3{
+			font-size: 40px;
+		}
+
+		input{
+			font-size: 50px;
+		}
+		button{
+			font-size: 50px;
+		}
+
+	</style>
+
+	<center>
+	<h1>Calor Latente</h1>
+	<h1>Q = m x L</h1>
+	
+	<h3>Q:</h3><input type="number" name="q" id="q" value="0.000">
+	<h3>m:</h3><input type="number" name="m" id="m" value="0.000">
+	<h3>L:</h3><input type="number" name="l" id="l" value="0.000">
+
+	<h1 id="resposta"></h1>
+
+	<button onclick="clickme()">calcular</button>
+	</center>
+
+	<script>
+		
+		function clickme(){
+			var q = document.getElementById('q');
+			var m = document.getElementById('m');
+			var l = document.getElementById('l');
+
+			q2 = parseFloat(q.value);
+			m2 = parseFloat(m.value);
+			l2 = parseFloat(l.value);
+
+			console.log(q2, m2, l2);
+
+
+			var resposta = document.getElementById('resposta');
+
+			if (q2 == 0.000 || q2 == 0) {
+				resposta.innerHTML = m2*l2 + "cal";
+			} else if (m2 = 0.000 || m2 == 0) {
+				resposta.innerHTML = q2/l2+"g";
+			} else if (l2 = 0.000 || l2 == 0) {
+				resposta.innerHTML = q2/l2 + "cal/g";
+			} else {
+				resposta.innerHTML = 0;
+			}
+
+		}
+	</script>
+</body>
+</html>
